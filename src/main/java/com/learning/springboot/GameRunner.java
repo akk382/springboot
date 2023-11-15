@@ -6,6 +6,8 @@ public class GameRunner {
     // What if we have a new game in future? Do we add another class here?
     // This violates the open-closed principle(SOLID principles),
     // as everytime we have a new game, we need to modify this class adding a new game.
+    // How do we fix this? Add a Game interface and inject it here,
+    // and inherit this interface for various games.
     MarioGame game;
 
     public GameRunner(MarioGame marioGame) {
