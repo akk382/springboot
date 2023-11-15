@@ -2,16 +2,11 @@ package com.learning.springboot;
 
 public class GameRunner {
 
-    // GameRunner is tightly coupled to MarioGame class.
-    // What if we have a new game in future? Do we add another class here?
-    // This violates the open-closed principle(SOLID principles),
-    // as everytime we have a new game, we need to modify this class adding a new game.
-    // How do we fix this? Add a Game interface and inject it here,
-    // and inherit this interface for various games.
-    MarioGame game;
+    // Now this is loosely coupled, as we can insert any new game of type Game.
+    Game game;
 
-    public GameRunner(MarioGame marioGame) {
-        this.game = marioGame;
+    public GameRunner(Game game) {
+        this.game = game;
     }
 
     public void run() {
